@@ -1,0 +1,49 @@
+name: Document quality
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  grammar-and-spell-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Gather document files
+        id: docs
+        shell: bash
+        run: |
+          mapfile -d '' files < <(git ls-files -z 'LICENSE' 'LICENSE.*' 'COPYING' 'COPYING.*' '*.md' '*.markdown' '*.txt' '*.rst' '*.adoc')
+
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          printf 'found=true\n' >> "$GITHUB_OUTPUT"
+          {
+            printf 'files<<EOF\n'
+            printf '%s\n' "${files[@]}"
+            printf 'EOF\n'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Spell check documents
+        if: steps.docs.outputs.found == 'true'
+        shell: bash
+        run: |
+          mapfile -t files <<< "${{ steps.docs.outputs.files }}"
+          npx --yes cspell@8 "${files[@]}"
+
+      - name: Grammar check documents
+        if: steps.docs.outputs.found == 'true'
+        shell: bash
+        run: |
+          mapfile -t files <<< "${{ steps.docs.outputs.files }}"
+          npx --yes --package textlint@14 --package textlint-rule-write-good@2 --package textlint-rule-common-misspellings@1 textlint --rule textlint-rule-write-good --rule textlint-rule-common-misspellings "${files[@]}"
