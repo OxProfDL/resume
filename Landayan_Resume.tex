@@ -1,0 +1,149 @@
+%-------------------------
+% Resume in LaTeX — "Jake's Resume" style
+% Reformatted from Dan Landayan's academic CV (LinkedIn version)
+%-------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Dan Landayan} \\ \vspace{2pt}
+    \small
+    \href{mailto:dan.landayan@gmail.com}{dan.landayan@gmail.com} \,\textperiodcentered\,
+    (510) 557-5628 \,\textperiodcentered\,
+    \href{https://github.com/magicmayonaise}{github.com/magicmayonaise} \,\textperiodcentered\,
+    linkedin.com/in/your-handle
+    \\ \vspace{4pt}
+    \small Ph.D.\ neuroscientist with over a decade of research experience and 8 peer-reviewed publications --- including first-author studies in \textit{eLife} and \textit{Nature Scientific Reports} and co-authored work in \textit{Cell} --- applying quantitative and analytical expertise toward data science and AI.
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Postdoctoral Scholar}{Stanford, CA}
+      {Stanford University --- Shah Lab}{2019 -- 2024}
+      \resumeItemListStart
+        \resumeItem{Investigated hypothalamic neural circuits underlying social behavior; co-authored ``Hypothalamic neurons that mirror aggression,'' published in \textit{Cell} (2023).}
+        \resumeItem{Awarded competitive fellowships including the Ben Barres Postdoctoral Fellowship and an NIH Diversity Supplement; selected as an HHMI Hanna Gray finalist.}
+        \resumeItem{Completed formal research-mentor training (CIMER; Stanford Mentoring Fundamentals) and mentored trainees as a SACNAS postdoctoral advisor.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Instructor of Record}{San Jos\'e, CA}
+      {San Jos\'e State University (CSU) --- General Genetics}{2024}
+      \resumeItemListStart
+        \resumeItem{Designed and taught an undergraduate General Genetics course as the sole Instructor of Record.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Graduate Researcher}{Merced, CA}
+      {University of California, Merced --- Wolf Lab}{2013 -- 2019}
+      \resumeItemListStart
+        \resumeItem{First-authored two studies on the neural basis of motivated behavior: thirst interneurons in \textit{eLife} (2021) and dopaminergic control of foraging in \textit{Nature Scientific Reports} (2018).}
+        \resumeItem{Mapped central neural circuitry for water- and food-seeking behavior in \textit{Drosophila} using genetic and behavioral assays.}
+        \resumeItem{Served as Teaching Assistant for Human Physiology; awarded the UC President's Dissertation Year Fellowship and the Dean's Distinguished Scholar Fellowship.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------
+\section{Selected Publications}
+  \resumeSubHeadingListStart
+    \resumeSubItem{\textbf{Landayan, D. S.}, et al. Thirst interneurons that promote water seeking and limit feeding behavior in \textit{Drosophila}. \textit{eLife} (2021). \textit{(first author)} \href{https://doi.org/10.7554/eLife.66286}{doi:10.7554/eLife.66286}}
+    \resumeSubItem{\textbf{Landayan, D. S.}, Feldman, D. S., Wolf, F. W. Satiation state-dependent dopaminergic control of foraging in \textit{Drosophila}. \textit{Nature Scientific Reports} (2018). \textit{(first author)} \href{https://doi.org/10.1038/s41598-018-24217-1}{doi:10.1038/s41598-018-24217-1}}
+    \resumeSubItem{Yang, T., \ldots\ Landayan, D., \ldots\ Shah, N. M. Hypothalamic neurons that mirror aggression. \textit{Cell} (2023). \href{https://doi.org/10.1016/j.cell.2023.01.022}{doi:10.1016/j.cell.2023.01.022}}
+    \resumeSubItem{Ramirez, D. O., Wang, B. P., Landayan, D., Kaur, G., Wolf, F. W. A single NPFR neuropeptide F receptor neuron that regulates thirst behaviors in \textit{Drosophila}. \textit{eNeuro} (2025). \textit{(Featured Article)} \href{https://doi.org/10.1523/ENEURO.0259-25.2025}{doi:10.1523/ENEURO.0259-25.2025}}
+    \resumeSubItem{\textbf{Landayan, D. S.}, Wolf, F. W. Shared neurocircuitry underlying feeding and drugs of abuse in \textit{Drosophila}. \textit{Biomedical Journal} (2015). \href{https://doi.org/10.1016/j.bj.2016.01.004}{doi:10.1016/j.bj.2016.01.004}}
+    \resumeItem{\textit{Additional peer-reviewed publications in Experimental Neurology (2018), Genes, Brain and Behavior (2016), and Frontiers in Integrative Neuroscience (2023).}}
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS & TRAINING-----------
+\section{Skills \& Training}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Machine Learning \& Mathematics}{: Probability \& Statistics for Machine Learning; Linear Algebra, Multivariate Calculus, and PCA for Machine Learning (DeepLearning.AI \textperiodcentered\ Imperial College London, 2025)} \\
+     \textbf{Programming \& Tools}{: Python, PyTorch, Git / GitHub} \\
+     \textbf{Research Methods}{: Neural-circuit mapping, \textit{Drosophila} genetics \& optogenetics, behavioral neuroscience assays, scientific writing \& publication}
+    }}
+ \end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of California, Merced}{Merced, CA}
+      {Ph.D. in Quantitative and Systems Biology (QSB)}{2013 -- 2019}
+    \resumeSubheading
+      {University of California, Davis}{Davis, CA}
+      {B.S. in Neurobiology, Physiology, and Behavior}{2007 -- 2011}
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
